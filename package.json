@@ -1,0 +1,15 @@
+{
+  "name": "css",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:luasy/css.git",
+  "author": "liujinghan <jinghan.liu@yunjiaplus.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "less": "^3.11.1",
+    "less-watch-compiler": "^1.14.6"
+  },
+  "scripts": {
+    "dev:less": "less-watch-compiler ./less ./css"
+  }
+}
