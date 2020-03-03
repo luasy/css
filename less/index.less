@@ -14,21 +14,64 @@ body {
   font-size: 40px;
 }
 
-p {
-  white-space: pre;
-  span {
-    display: inline-block;
-    animation: landIn 0.8s ease-out both;
+h1 { font-size: 30px; }
+h2 { font-size: 28px; }
+h3 { font-size: 26px; }
+
+.slide-bar {
+  position: relative;
+  color: transparent;
+  margin: 10px 0;
+  width: 400px;
+  height: 40px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+
+  @colorList: #35b9f1, pink, salmon;
+
+  .loop(@colors, @i: 1, @val: extract(@colors, @i)) when (length(@colors) >= @i) {
+
+    .loop(@colors, (@i + 1));
+
+    &:nth-child(@{i}) {
+      animation: fill-text-white 1.5s 1.2 + ((@i - 1) * 1.5s) forwards;
+      &::before {
+        background: @val;
+        animation: slide-in-out 1.5s ((@i - 1) * 1.5s) cubic-bezier(0.75, 0, 0, 1) forwards;
+      }
+    }
+  }
+
+  .loop(@colorList);
+}
+
+@keyframes fill-text-white {
+  to {
+    color: white;
   }
 }
 
-@keyframes landIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20%);
+@keyframes slide-in-out {
+  50% {
+    transform: scaleX(1);
+    transform-origin: left;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  50.1% {
+    transform-origin: right;
+  }
+
+  100% {
+    transform: scaleX(0);
+    transform-origin: right;
   }
 }
