@@ -2,78 +2,29 @@
   padding: 0;
   margin: 0;
 }
-body {
-  width: 100%;
-  height: 100vh;
-  background-color: #222;
+
+.btn-text-scss {
   color: #fff;
+  padding: 10px 30px;
+  border: 1px solid skyblue;
+  transition: 0.25s;
+  position: relative;
+}
+
+body {
   display: flex;
+  height: 100vh;
   justify-content: center;
   align-items: center;
-  font-size: 40px;
+  background: #1A1E23;
 }
-h1 {
-  font-size: 30px;
-}
-h2 {
-  font-size: 28px;
-}
-h3 {
-  font-size: 26px;
-}
-.slide-bar {
+
+.btn {
   position: relative;
-  color: transparent;
-  margin: 10px 0;
-  width: 400px;
-  height: 40px;
+  padding: 1rem 3rem;
+  color: white;
+  border: 1px solid #00aed1;
+  transition: 0.25s;
 }
-.slide-bar::before {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform: scaleX(0);
-  transform-origin: left;
-}
-.slide-bar:nth-child(3) {
-  animation: fill-text-white 1.5s 4.2s forwards;
-}
-.slide-bar:nth-child(3)::before {
-  background: salmon;
-  animation: slide-in-out 1.5s 3s cubic-bezier(0.75, 0, 0, 1) forwards;
-}
-.slide-bar:nth-child(2) {
-  animation: fill-text-white 1.5s 2.7s forwards;
-}
-.slide-bar:nth-child(2)::before {
-  background: pink;
-  animation: slide-in-out 1.5s 1.5s cubic-bezier(0.75, 0, 0, 1) forwards;
-}
-.slide-bar:nth-child(1) {
-  animation: fill-text-white 1.5s 1.2s forwards;
-}
-.slide-bar:nth-child(1)::before {
-  background: #35b9f1;
-  animation: slide-in-out 1.5s 0s cubic-bezier(0.75, 0, 0, 1) forwards;
-}
-@keyframes fill-text-white {
-  to {
-    color: white;
-  }
-}
-@keyframes slide-in-out {
-  50% {
-    transform: scaleX(1);
-    transform-origin: left;
-  }
-  50.1% {
-    transform-origin: right;
-  }
-  100% {
-    transform: scaleX(0);
-    transform-origin: right;
-  }
-}
+
+/*# sourceMappingURL=index.css.map */

@@ -10,6 +10,9 @@
     "less-watch-compiler": "^1.14.6"
   },
   "scripts": {
-    "dev:less": "less-watch-compiler ./less ./css"
+    "dev:sass": "sass --watch ./scss/:./css/"
+  },
+  "dependencies": {
+    "sass": "^1.26.2"
   }
 }
